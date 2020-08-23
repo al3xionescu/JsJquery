@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
 <body>
 
 <h1>Setting Text Content</h1>
@@ -8,32 +11,39 @@
 <h2 id="02">Hello!</h2>
 
 <script>
-var myElement = document.getElementById("01");
-myElement.textContent = "Hello!";
+$(document).ready(function() {
+  var myElement = $("#01");
+  myElement.text("Hello!");
+});
 </script>
 
 </body>
 </html>
-
 
 
 <!DOCTYPE html>
 <html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
 <body>
 
-<h1>Setting HTML</h1>
+<h1>Getting Text Content</h1>
 
-<div id="01">
-  <h2 >Hello World!</h2>
-</div>
-<div id="02">
-  <h2 >Hello Sweden!</h2>
-</div>
+<h2 id="01">Hello Romania!</h2>
+<h2 id="02">Hello Sweden!</h2>
+<h2 id="03">Hello Japan!</h2>
+
+<p id="trial"></p>
 
 <script>
-var content = document.getElementById("02").innerHTML;
-document.getElementById("01").innerHTML = content;
+$(document).ready(function() {
+  var myElement = $("#02");
+  var myText = myElement.text();
+  $("#trial").text(myText); 
+});
 </script>
 
 </body>
 </html>
+
